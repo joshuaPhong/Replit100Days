@@ -1,16 +1,12 @@
-# This is a sample Python script.
+print("""Joshua
+24/02/1973
+I am signing up for Replit's 100 day of Python
+challenge!
+I will make sure to spend some time every day coding
+along, for a minimum of 10 minutes a day.
+I'll be using Replit, an amazing online IDE so I can do
+this from my phone where ever I happen to be. No excuses
+for me not coding from the middle od a field!
+I am feeling 😊
+You can follow my progress at replit.com/joshuaPhong""")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
