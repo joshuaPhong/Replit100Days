@@ -7,3 +7,5 @@ plant = input("A type of plant: ")
 item = input("A household item: ")
 
 print("You will be", cooking, food, "with", burned, plant, "on a bed of", item)
+
+
