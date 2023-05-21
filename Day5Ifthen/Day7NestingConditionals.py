@@ -75,3 +75,5 @@ elif fav_char.lower() in ("ned stark", "eddard stark", "lord stark"):
 
 else:
     print("your character choice leaves somthing to be desired.")
+
+
