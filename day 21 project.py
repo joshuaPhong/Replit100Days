@@ -14,12 +14,12 @@ for i in range(1, 11):
     else:
         print("Sorry, the answer was", ans)
 
-print("You scored", correct, "/10")
-if 1 < correct < 5:
+print("You scored", correct, "/ 10")
+if 0 < correct < 5:
     print("Not so good. Keep practicing")
-elif 5 < correct <= 7:
+elif 5 <= correct <= 7:
     print("Good work 🙂")
-elif 8 < correct <= 9:
+elif 8 <= correct <= 9:
     print("Great 😁😊")
 else:
     print("Great work 😁😁😁😁🤓🤓🤓🤓")
