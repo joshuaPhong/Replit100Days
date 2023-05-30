@@ -1,5 +1,7 @@
 # os allows communication with the console
-# time library allows us to pause the program for a specified length of time
+# os.system("clear") will clear the console
+# time library allows us to pause the program for a specified length
+# with time.sleep(time in seconds)
 import os
 import time
 
@@ -12,8 +14,12 @@ def play():
     while True:
         # Start taking user input and doing something with it
         user_input_stop = int(input("You can exit any time by entering 1 >>> "))
+        # if the user enters pause the audio file is paused
         if user_input_stop == 1:
             source.paused = True
+            # the empty return statement leaves the function
+            # in our case the source i.e. audio play file is paused then we
+            # exit the function
             return
         else:
             continue
