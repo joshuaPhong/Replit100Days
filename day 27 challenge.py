@@ -1,9 +1,10 @@
 import os
 import time
 import random
+
 # a list of potential character types
 characters_type_list = ["Human", "Elf", "Wizard", "Warrior", "Valkyrie", "Orc"]
-# we need a list of dictionaries to kepp player characters
+# we need a list of dictionaries to keep player characters
 players = []
 
 
@@ -31,12 +32,16 @@ def character():
         print("HEALTH:", health())
         print("STRENGTH:", strength())
         print()
-        new_item = {"name": character_name,
-                    "type": characters_type_list[character_type],
-                    "health": health(), "strength": strength()}
-        players.append(new_item)
+        # create a dictionary of the new players data
+        new_character = {"name": character_name,
+                         "type": characters_type_list[character_type],
+                         "health": health(),
+                         "strength": strength()}
+        # add new player the list
+        players.append(new_character)
         print(players)
         time.sleep(5)
+        # clear the console
         os.system("cls || clear")
 
         again = input("Build another character?:\n").lower()
