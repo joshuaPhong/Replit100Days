@@ -11,7 +11,7 @@ players = []
 # todo: generate TWO characters.
 # change the while to a for loop or use an if
 def character():
-    while True:
+    for i in range(2):
         os.system("cls")
         print("🧙‍♂️🪄 Character Builder 🧝‍♀️💪")
         print("")
@@ -20,7 +20,7 @@ def character():
         if len(players) == 0:
             print("Player One")
         else:
-            print("Player", len(players)+1)
+            print("Player", len(players) + 1)
 
         character_name = input("What is your characters name >>> ")
         time.sleep(1)
@@ -28,35 +28,47 @@ def character():
         # variable ind is used to change the index in the list
         ind = 0
         # loop through the character list
-        for i in range(len(characters_type_list)):
+        for j in range(len(characters_type_list)):
             # print the list index for character selection
             # print the list item for the user
-            print(i, ".", characters_type_list[ind])
+            print(j, ".", characters_type_list[ind])
             ind += 1
         character_type = int(input(">>>"))
 
         time.sleep(1)
-        print(character_name, "is a", characters_type_list[character_type])
-        print("HEALTH:", health())
-        print("STRENGTH:", strength())
-        print()
+
         # create a dictionary of the new players data
         new_character = {"name": character_name,
                          "type": characters_type_list[character_type],
                          "health": health(),
                          "strength": strength()}
+
         # add new player the list
         players.append(new_character)
-        print(players)
+
+        print("Player", [i + 1])
+        # access the list character_type with the index []
+        print(character_name, "is a", characters_type_list[character_type])
+        # access the appended data and print it to the screen
+        # players list at index[index] with dict key ["key"]
+        print("HEALTH:", players[i]["health"])
+        print("STRENGTH:", players[i]["strength"])
+        print()
+
         time.sleep(5)
         # clear the console
         os.system("cls || clear")
 
-        again = input("Build another character?:\n").lower()
-        if again == "no":
-            break
-        time.sleep(1)
-        os.system("cls || clear")
+        # not needed the range will do it
+
+        # again = input("Build another character?:\n").lower()
+        # if again == "no":
+        #     time.sleep(1)
+        #     os.system("cls || clear")
+        #     continue
+
+    else:
+        return
 
 
 def health():
@@ -92,4 +104,5 @@ def battle():
 #     EXIT
 
 character()
-print(players)
+battle()
+
