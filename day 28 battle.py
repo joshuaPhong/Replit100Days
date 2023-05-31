@@ -8,12 +8,20 @@ characters_type_list = ["Human", "Elf", "Wizard", "Warrior", "Valkyrie", "Orc"]
 players = []
 
 
+# todo: generate TWO characters.
+# change the while to a for loop or use an if
 def character():
     while True:
         os.system("cls")
         print("🧙‍♂️🪄 Character Builder 🧝‍♀️💪")
         print("")
         time.sleep(1)
+
+        if len(players) == 0:
+            print("Player One")
+        else:
+            print("Player", len(players)+1)
+
         character_name = input("What is your characters name >>> ")
         time.sleep(1)
         print("What type of character would you like")
@@ -66,4 +74,22 @@ def roll_dice(side):
     return result
 
 
+# TODO: simulate battle
+# players take turns rolling a six sided die
+# winner is the higher roll
+# winner deals damage to health points
+# play until health points <=0
+# use sleep and time to keep a tidy console
+# player one = index 0 player two = index 1 in player list
+def battle():
+    print("Battle")
+
+
+#
+# TODO: GAME PLAY.
+#     CHARACTER
+#     BATTLE
+#     EXIT
+
 character()
+print(players)
