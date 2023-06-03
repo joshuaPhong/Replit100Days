@@ -49,7 +49,7 @@
 # time.sleep(2)
 
 
-def change_colour(color, word):
+def change_color(color, word):
     if color == "yellow":
         print("\033[1;33m", word, end="", sep="")
     elif color == "red":
@@ -79,7 +79,7 @@ def change_the_color():
     print("Lets change the colors", end="\n")
     input_color = input("Choose a color >>> ")
     input_text = input("Choose some text to color >>> ")
-    return change_colour(input_color, input_text)
+    return change_color(input_color, input_text)
 
 
 change_the_color()
