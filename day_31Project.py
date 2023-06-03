@@ -42,7 +42,21 @@ pnp = ["PREV", "NEXT", "PAUSE"]
 print(f"\033[0m{pnp[0]:<10}")
 print(f"\033[0;32m{pnp[1]: ^10}")
 print(f"\033[0;36m{pnp[2]:>10}")
-
-
-
+welcome = "WELCOME TO"
+print(f"\033[0m{welcome: ^35}")
+arm = "--    AEMBOOK    --"
+print(f"\033[0;34m{arm: ^35}")
+ripoff = "Definitely not a rip off of"
+cert = "a certain other social"
+net = "networking site."
+print(f"\033[1;33m{ripoff:>50}")
+print(f"\033[1;33m{cert:>50}")
+print(f"\033[1;33m{net:>50}")
+honest = "Honest"
+print(f"\033[0;31m{honest:^35}")
+print()
+user = "Username"
+password = "Password"
+print(f"\033[0m{user:^35}")
+print(f"\033[0m{password:^35}")
 
