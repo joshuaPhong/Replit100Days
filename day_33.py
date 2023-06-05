@@ -6,7 +6,7 @@ to_do = []
 
 def loop_list():
     for j in to_do:
-        return j
+        print(j)
 
 
 while True:
@@ -14,17 +14,15 @@ while True:
     menu = input("Do you want to add, view, or edit your list >>> ")
 
     if menu == "add":
-        item = str(input("What do you want to add >>> "))
+        item = (input("What do you want to add >>> "))
         to_do.append(item)
-
 
         print(f"Your updated list {loop_list()}")
         time.sleep(1)
         os.system("cls || clear")
         continue
     elif menu == "view":
-        for i in to_do:
-            print(i)
+        loop_list()
     elif menu == "edit":
         for i in to_do:
             print(i)
