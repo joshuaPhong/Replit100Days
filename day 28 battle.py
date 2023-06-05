@@ -30,7 +30,7 @@ def character():
         # loop through the character list
         for j in range(len(characters_type_list)):
             # print the list index for character selection
-            # print the list item for the user
+            # print the list names for the user
             print(j, ".", characters_type_list[ind])
             ind += 1
         character_type = int(input(">>>"))
