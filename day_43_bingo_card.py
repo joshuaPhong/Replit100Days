@@ -1,5 +1,22 @@
 # generate a bingo card with ordered and random numbers
 import random
+import time
+# user defined functions. in comments below if trying to run this code off platform
+from ppForListOfList import prettyPrint as pP
+from cleanInput import cleanInput as cI
+
+
+# def cleanInput(word):
+#     return word.strip().lower()
+#
+#
+# def prettyPrint(your_list):
+#     print()
+#     for rows in your_list:
+#         for items in rows:
+#             print(f"{items:^10}", end=" | ")
+#         print()
+#     print()
 
 
 def random_numbers():
@@ -14,6 +31,22 @@ def random_numbers():
     return sorted(list_of_random_numbers)
 
 
+def nextNumber():
+    while len(n_num_list) <= 90:
+        next_number = random.randint(0, 90)
+        if next_number in n_num_list:
+            print(next_number)
+            time.sleep(1)
+
+            continue
+        else:
+            n_num_list.append(next_number)
+            print(sorted(n_num_list))
+            print(len(n_num_list))
+            return next_number
+
+
+n_num_list = []
 rnd_num = random_numbers()
 # print(rnd_num)
 bingo = [
@@ -22,11 +55,36 @@ bingo = [
     [rnd_num[5], rnd_num[6], rnd_num[7]]
 ]
 
-# print an fstring bingo | bingo | bingo -------------......
-#  alignment. each variable has a space of five chars. aligned to the left, center ant right respectively
 
-print(f"{bingo[0][0]:<5} | {bingo[0][1]:^5} | {bingo[0][2]:>5}")
-print("-" * 21)
-print(f"{bingo[1][0]:<5} | {bingo[1][1]:^5} | {bingo[1][2]:>5}")
-print("-" * 21)
-print(f"{bingo[2][0]:<5} | {bingo[2][1]:^5} | {bingo[2][2]:>5}")
+# GAME PLAY
+def play():
+    exes = 0
+    x = "X"
+    while True:
+
+        do_next_number = input("Next number: Y/n >>> ").title()
+        if cI(do_next_number) == "y":
+            num = nextNumber()
+            print(num)
+            for row in range(3):
+                for item in range(3):
+                    if bingo[row][item] == num:
+                        bingo[row][item] = x
+                        exes += 1
+                        print(f" X's: {exes}")
+                        time.sleep(1)
+                    if exes == 8:
+                        print("You Won")
+                        break
+                    else:
+                        continue
+
+            pP(bingo)
+        else:
+            print("Goodbye")
+            break
+
+
+pP(bingo)
+# call play()
+play()
