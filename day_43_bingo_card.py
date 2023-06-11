@@ -1,22 +1,8 @@
 # generate a bingo card with ordered and random numbers
 import random
 import time
-# user defined functions. in comments below if trying to run this code off platform
 from ppForListOfList import prettyPrint as pP
 from cleanInput import cleanInput as cI
-
-
-# def cleanInput(word):
-#     return word.strip().lower()
-#
-#
-# def prettyPrint(your_list):
-#     print()
-#     for rows in your_list:
-#         for items in rows:
-#             print(f"{items:^10}", end=" | ")
-#         print()
-#     print()
 
 
 def random_numbers():
@@ -85,6 +71,7 @@ def play():
             break
 
 
+# print the bingo table
 pP(bingo)
 # call play()
 play()
