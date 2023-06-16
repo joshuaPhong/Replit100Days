@@ -26,7 +26,7 @@ for keys, values in my_dictionary.items():
     print(f"\nUsing an f-string inside the loop. Key: {keys} Value: {values}")
 
 # including if statements
-print("\nUsing if statements in the for loop of a dict")
+print("\nUsing if statements in the for loop of a dictionary")
 for keys, values in my_dictionary.items():
     print(f"{keys}: {values}")
     if keys == "name":

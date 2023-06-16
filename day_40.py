@@ -6,10 +6,10 @@ date = input("Input your date of birth: ")
 phone = input("Input your phone number: ")
 address = input("Input your address: ")
 
-# create the dict in one line
+# create the dictionary in one line
 my_dict = {"name": name, "date": date, "phone": phone, "address": address}
 
-# creat the dict one key : value pair at a time
+# creat the dictionary one key : value pair at a time
 # my_dict = {}
 # my_dict["name"] = name
 # my_dict["date"] = date
@@ -18,7 +18,7 @@ my_dict = {"name": name, "date": date, "phone": phone, "address": address}
 
 
 # send user input straight to a dictionary.
-# The variable is the dict key : the input is the value
+# The variable is the dictionary key : the input is the value
 my_dict["age"] = input("Input your age")
 
 # when printing with f-strings.

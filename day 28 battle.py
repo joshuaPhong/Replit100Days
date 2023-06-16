@@ -51,7 +51,7 @@ def character():
         # access the list character_type with the index []
         print(character_name, "is a", characters_type_list[character_type])
         # access the appended data and print it to the screen
-        # players list at index[index] with dict key ["key"]
+        # players list at index[index] with dictionary key ["key"]
 
         if i == 0:
             print("HEALTH:", players[i]["health"])

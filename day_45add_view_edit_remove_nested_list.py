@@ -137,6 +137,8 @@ def remove():
     main_or_exit()
 
 
+#  we could have removed the entire row and then had the user add a new record
+#  this would eliminate the problem of duplicates in list
 def edit():
     tidy()
     pP(to_do_list)
