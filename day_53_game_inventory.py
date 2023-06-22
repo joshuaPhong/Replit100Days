@@ -53,10 +53,12 @@ def tidy_screen():
 
 def add_item():
     print("Add Items to Your Inventory")
-    item = input("Enter an item: ")
+    item = input("Enter an item: ").capitalize()
     inventory.append(item)
     auto_save("inventory.txt")
-    print(inventory)
+    for item in inventory:
+        print(item, end=", ")
+    print()
 
 
 def view_items():
