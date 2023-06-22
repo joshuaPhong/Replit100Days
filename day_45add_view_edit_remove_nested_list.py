@@ -8,9 +8,18 @@ from ppForListOfList import prettyPrint as pP
 to_do_list = []
 
 
+def load():
+
+    pass
+
+
+def save():
+    pass
+
+
 def tidy():
     import os, time
-    os.system("cls || clear")
+    os.system("cls" if os.name == "nt" else "clear")
     time.sleep(1)
 
 
