@@ -19,6 +19,21 @@ inventory = []
 debug_mode = True
 
 
+def auto_load(file):
+    global inventory
+    try:
+        with (open(file, "r")) as f:
+            inventory_contents = f.read()
+            if inventory_contents:
+                inventory = eval(inventory_contents)
+            else:
+                inventory = []
+    except Exception as err:
+        print(f"Load error: {err}\nTry again")
+        if debug_mode:
+            print(traceback.format_exc())
+
+
 def auto_save(file):
     try:
         with open(file, "w") as f:
@@ -49,7 +64,11 @@ def view_items():
 
 
 def remove_item():
-    pass
+    print("Remove Items to Your Inventory")
+    item = input("Enter an item: ")
+    inventory.remove(item)
+    auto_save("inventory.txt")
+    print(inventory)
 
 
 # a main menu message
@@ -86,5 +105,7 @@ def menu():
             continue
 
 
+# load the inventory file
+auto_load("inventory.txt")
 # call the menu to start the program
 menu()
