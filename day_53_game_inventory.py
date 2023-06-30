@@ -34,6 +34,21 @@ def auto_load(file):
             print(traceback.format_exc())
 
 
+# def auto_load(file, target_list):
+#     try:
+#         with open(file, "r") as f:
+#             inventory_contents = f.read()
+#             if inventory_contents:
+#                 target_list.extend(eval(inventory_contents))
+#             else:
+#                 target_list.clear()
+#     except Exception as err:
+#         print(f"Load error: {err}\nTry again")
+#         if debug_mode:
+#             import traceback
+#             print(traceback.format_exc())
+
+# saves the list to a file.txt
 def auto_save(file):
     try:
         with open(file, "w") as f:
@@ -61,13 +76,26 @@ def add_item():
     print()
 
 
+def clean_input(item):
+    return item.strip().lower()
+
+
 def view_items():
-    pass
+    print("View Your Items")
+    item = input("What item do you want to view.\nEnter >>> ").strip().capitalize()
+    if item in inventory:
+        item_count = inventory.count(item)
+        print(f"{item}: {item_count}", end="")
+    else:
+        print("Item not in inventory")
+        time.sleep(1)
+        menu()
+    print()
 
 
 def remove_item():
     print("Remove Items to Your Inventory")
-    item = input("Enter an item: ")
+    item = input("Enter an item: ").strip().capitalize()
     inventory.remove(item)
     auto_save("inventory.txt")
     print(inventory)
