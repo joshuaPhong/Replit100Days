@@ -20,24 +20,39 @@ def update():
 # a sub routine to increase the label value by the users input
 def get_from_text_box():
     global label
-    number = text.get(1.0,
-                      "end")  # get input from the text box (called text). start at position 1 and get until the end
+    # get input from the text box (called text). start at position 1 and get until the end
+    number = text.get(1.0, "end")
     number = int(number)  # cast the input
     label += number  # increase the value of the label by the input
     hello["text"] = label  # hello is the tkinter label variable, and "text" is the inner text
 
 
-hello = tk.Label(text=label)  # Creates a text box
-hello.pack()  # 'pack' places the element on the screen
+# elements are displayed in the order they are coded
 
-button = tk.Button(text="Click me!",
-                   command=get_from_text_box)  # Creates a button. button text is string. command call the function. will increase the label by one
-button.pack()
+# the pack() function places the elements in the window
+# we can add argument to the pack() function.
+# e.g. button.pack(side=tk.BOTTOM) we can also use LEFT, RIGHT, TOP AND CENTER.
 
+# we can use the .grid(row=, column=) function instead of pack()
+
+hello = tk.Label(text=label)
+hello.grid(row=0, column=0)  # Creates a text box
+# hello.pack()  # 'pack' places the element on the screen
+
+# Creates a button. Button text is string. Command calls the function. It will increase the label by one
+try:
+
+    button = tk.Button(text="Click me!",
+                       command=get_from_text_box)
+    button.grid(row=0, column=1)
+    # button.pack()
+except Exception as e:
+    pass
 # create a text box for user input
-text = tk.Text(window, height=1, width=50)
 # Three arguments, name of the window to place the text box in, height & width.
-text.pack()
+text = tk.Text(window, height=1, width=50)
+text.grid(row=0, column=2)
+# text.pack()
 
 # run the tkinter window
 tk.mainloop()
