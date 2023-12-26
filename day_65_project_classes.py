@@ -16,8 +16,9 @@ class Character:
         print(f"Name: {self.name}\nHealth: {self.health}\nMagic: {self.magic}")
 
 
-# There should be a sub-class 'player' which inherits from character and also has a number of lives.
-# Player should also have an 'am I alive?' method which checks the player status and reports back yes or no.
+# There should be a sub-class 'player' which inherits from character and also
+# has a number of lives. Player should also have an 'am I alive?' method
+# which checks the player status and reports back yes or no.
 
 def am_i_alive(lives):
     if lives <= 0:
@@ -38,7 +39,8 @@ class Player(Character):
         print(f"===PLAYER===\nName: {self.name}\nHealth: {self.health}\nMagic: {self.magic}\nLives: {self.lives}")
 
 
-# There should also be an 'enemy' sub-class with additional 'type' and 'strength'.
+# There should also be an 'enemy' subclass with additional 'type' and
+# 'strength'.
 
 class Enemy(Character):
     type_of_enemy = None
@@ -50,7 +52,7 @@ class Enemy(Character):
         self.strength = strength
 
 
-# 'enemy' should have two sub-classes:
+# 'enemy' should have two subclasses:
 # 'orc' with a 'speed' attribute.
 # 'vampire' with a 'day/night' tracker
 
